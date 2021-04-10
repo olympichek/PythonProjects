@@ -1,11 +1,5 @@
 from math import sqrt
 
-def calcDistance(points_pair):
-    p1, p2 = points_pair
-    d1 = p1[0] - p2[0]
-    d2 = p1[1] - p2[1]
-    return sqrt(d1 ** 2 + d2 ** 2)
-
 def pointsToEdges(points):
     n = len(points)
     if n < 2: return []
@@ -13,6 +7,10 @@ def pointsToEdges(points):
     for i in range(0, n - 1):
         edges.append((points[i], points[i + 1]))
     return edges
+
+def calcDistance(edge):
+    (x1, y1), (x2, y2) = edge
+    return sqrt((x1 - x2) ** 2 + (y1 - y2) ** 2)
 
 def calcPerimeter(edges):
     return sum(map(calcDistance, edges))
