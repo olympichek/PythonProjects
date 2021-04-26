@@ -1,3 +1,9 @@
+def mapl(function, list_):
+    return list(map(function, list_))
+
+def mapt(function, tuple_):
+    return tuple(map(function, tuple_))
+
 def read_data(filename):
     file = open(filename, 'r')
     lines = []
@@ -33,7 +39,8 @@ def compare_floats(f1, f2):
 def get_step(data):
     return data[1][0] - data[0][0]
 
-def check_wavestep(step1, step2, step3):
+def check_wavestep(steps):
+    step1, step2, step3 = steps
     if  compare_floats(step1, step2)\
     and compare_floats(step2, step3):
         return True
@@ -46,6 +53,6 @@ def normalize_wavestep(max_step):
         for i in range(1, len(data)):
             if data[i][0] - acc >= max_step:
                 data_.append(data[i])
-                acc = data[i]
+                acc = data[i][0]
         return data_
     return normalize_wavestep_
