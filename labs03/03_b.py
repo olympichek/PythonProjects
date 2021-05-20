@@ -1,9 +1,10 @@
 import numpy as np
 import matplotlib.pyplot as plt
 from matplotlib.animation import FuncAnimation
-from mpl_toolkits.mplot3d import Axes3D
+import mpl_toolkits.mplot3d.axes3d as p3
 
 fig = plt.figure(figsize=(12, 10))
+ax = p3.Axes3D(fig)
 
 N = 2
 x = y = np.linspace(-5, 5, 101)
@@ -21,9 +22,8 @@ def Animate(i):
     plt.ylabel('y')
     h = 0.1
     z = Function3d(i * h)
-    plt.contourf(x, y, z, zcont)
-    # Axes3D.plot_surface(x, y, z)
-    plt.colorbar()
+    ax.plot_surface(x1, y1, z)
+    plt.show()
     plt.text\
         ( 4.5
         , 4.5
@@ -35,4 +35,4 @@ def Animate(i):
     return fig
 
 anim = FuncAnimation(fig, Animate, frames=100, interval=1)
-anim.save('03 а).gif', writer='pillow')
+anim.save('03 б).gif', writer='pillow')
