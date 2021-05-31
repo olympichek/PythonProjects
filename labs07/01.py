@@ -26,7 +26,7 @@ min_e = df.loc[idxmin][E]
 
 # Завдання 5
 deltaE = abs(E0 - min_e)
-print(f'delta E = { round(deltaE, 3) }')
+print(f'delta E = { round(deltaE, 3) } еВ')
 
 plt.plot(df[E], df[A])
 plt.xlabel(E)
