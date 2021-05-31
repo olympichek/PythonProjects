@@ -24,7 +24,11 @@ try:
     for dataset in data:
         plt.plot(dataset.length, dataset.absorption, label=dataset.label)
 
-    plt.grid(axis='both')
+    # plt.grid(axis='both')
+    plt.minorticks_on()
+    plt.grid(which='major', color = 'k')
+    plt.grid(which='minor', color = 'k', linestyle = ':')
+
     plt.legend()
     plt.xlabel('wavelength')
     plt.ylabel('absorption')
@@ -70,7 +74,10 @@ try:
             , f'({ table[i][1] }, { round(table[i][2], 2) })'
             )
 
-    plt.grid(axis='both')
+    # plt.grid(axis='both')
+    plt.minorticks_on()
+    plt.grid(which='major', color = 'k')
+    plt.grid(which='minor', color = 'k', linestyle = ':')
     plt.legend()
     plt.xlabel('wavelength')
     plt.ylabel('absorption')
