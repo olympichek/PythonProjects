@@ -62,7 +62,7 @@ def animate(i):
         , f'x = { round(x_i, 0) }'
         , f'y = { round(y_i, 2) }'
         , f'v = { round(v_i, 2) }'
-        , f'α = { round(alpha_i, 5) }'
+        , f'$\\alpha$ = { round(alpha_i, 5) }'
         ])
     plt.text(1500, 0.3, label, ha='right', va='top')
     return fig
